@@ -1,0 +1,1 @@
+{include 'vequipment/_add.tpl'}

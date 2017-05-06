@@ -1,0 +1,48 @@
+body {
+	behavior:url("css/hover.htc");
+}
+.ambitios_table_block {
+	zoom:1	
+}
+.ambitios_picture {
+	zoom:1;
+}
+.ambitios_picture2 {
+	behavior: url(PIE.htc);
+	zoom:1;
+}
+.ambitios_picture3 {
+	behavior: url(PIE.htc);
+	zoom:1;
+}
+.ambitios_picture4 {
+	behavior: url(PIE.htc);
+	zoom:1;
+}
+.ambitios_picture_smal {
+	behavior: url(PIE.htc);
+	zoom:1;
+}
+.ambitios_row {
+	zoom:1
+}
+.ambitios_menu li a span{
+	zoom:1	
+}
+.ambitios_button_small_rev, .ambitios_button_small_rev, .ambitios_button_small, .ambitios_pagination a, .ambitios_picture, .ambitios_pagination, .ambitios_act {
+	behavior: url(PIE.htc);
+}
+.ambitios_first_td {
+	behavior: url(PIE.htc);
+}
+.ambitios_last_td {
+	behavior: url(PIE.htc);
+}
+.ambitios_sleder_title {
+	*margin-bottom:12px;
+}
+.ambitios_sleder_title strong {
+	*margin-bottom:-10px
+}
+
+

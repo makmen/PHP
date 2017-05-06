@@ -1,0 +1,14 @@
+<div id="container">
+	<div class="thumbs">
+		<? if (is_array($compiler["galerea"]) && count ($compiler["galerea"])>0) {reset($compiler["galerea"]); while (list($compiler["k"], $compiler["v"]) = each($compiler["galerea"])) {  ?>
+			<div class="view fourth-effect">
+				<a href="<? echo $compiler["v"]['urlBigImage']; ?>" style="background-image:url(<? echo $compiler["v"]['urlSmallImage']; ?>)" title="<? echo $compiler["v"]['title']; ?>"></a>
+				<div class="mask"></div>
+			</div>
+		<?  } }  ?>
+	</div>
+	<!-- JavaScript includes - jQuery, turn.js and our own script.js -->
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://rezby.local/js/touchTouch.jquery.js"></script>
+	<script src="http://rezby.local/js/script.js"></script>
+</div>

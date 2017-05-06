@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><? echo FOLDER_SAIT; ?></title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link href="http://rez.by/css/reset.css" rel="stylesheet">
+	<link href="http://rez.by/css/style.css" rel="stylesheet">
+<? if ( $compiler["operation"] == 'galerea' ) { ?>
+	<link href="http://rez.by/css/styles.css" rel="stylesheet">
+	<link href="http://rez.by/css/touchTouch.css" rel="stylesheet">
+<?  }  ?>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="http://rez.by/images/favicon.png" type="image/png">   
+	<script type="text/javascript" src="http://rez.by/js/jquery-latest.min.js"></script>
+</head>
+<body>
+	<div class="main">
+		<div class="wrap">
+			<div class="head1">
+				<div class="slog">
+					<h1>Пан Свiдровiч</h1>
+					<p class="slog1">Паслугi па свiдраванню</p>
+				</div>
+				<div class="koronka">
+					<div class="kontakttel">
+						<div class="number1">
+							<table width="70" align="center" valign="bottom" border="1" align="center" cellpadding="4" cellspacing="0"> 
+								<tr> 
+									<td align="right" valign="bottom"><p class="slog1">8 029</p></td>
+								</tr>
+								<tr>
+									<td align="right" valign="top"><p class="slog1">8 033</p></td>
+								</tr>
+							</table>
+						</div>
+						<div class="number2">
+							<p class="slog2">366 04 10</p>
+						</div>
+						<div class="pld"></div>
+						<p class="kontakt">happy.diamond@mail.ru</p>
+					</div>
+					<div class="knopki">
+						<ul class="knopka">
+							<li><a class="ru" href="javascript:void(0)"> </a></li>
+							<li><a class="by" href="javascript:void(0)"> </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="pld"></div>
+			<div>
+				<div class="menu">
+					<ul class="menuha">
+						<li><a href="<? if ( $compiler["lang"] == '') { ?><? echo SERVER_ROOT; ?><?  } else {  ?><? echo SERVER_ROOTBY; ?><?  }  ?>"><? echo $compiler["language"]['LANG_menuMain']; ?></a></li>
+						<li><a href="http://rez.by/pages/price/"><? echo $compiler["language"]['LANG_menuPrice']; ?></a></li>   
+						<li><a href="javascript:void(0)"><? echo $compiler["language"]['LANG_menuServices']; ?></a>
+							<ul>
+								<li><a class="koronka1" href="http://rez.by/pages/sverlenie/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;сверление&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+								<li><a class="koronka1" href="http://rez.by/pages/rezka/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;резка&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+								<li><a class="koronka1" href="http://rez.by/pages/demontazh/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;демонтаж&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+							</ul>
+						</li>
+						<li><a href="http://rez.by/pages/galerea/"><? echo $compiler["language"]['LANG_menuGallery']; ?></a></li>
+						<li><a href="javascript:void(0)"><? echo $compiler["language"]['LANG_menuContacts']; ?></a>
+							<ul>
+								<li><a class="koronka1" href="http://rez.by/pages/about/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+							</ul>
+						
+						
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="content1">
+				<? if ( $compiler["php"] == '' ) { ?>
+				<div class="menu1">
+					<div id="rotator">
+						<ul>
+							<li class="show"><a href="http://rez.by/pages/galerea/"><img src="http://rez.by/images/fot1_small.png" alt="сверление"></a></li>
+							<li><a href="http://rez.by/pages/galerea/"><img src="http://rez.by/images/fot2_small.png" alt="сверление"></a></li>
+							<li><a href="http://rez.by/pages/galerea/"><img src="http://rez.by/images/fot3_small.png" alt="сверление"></a></li>
+							<li><a href="http://rez.by/pages/galerea/"><img src="http://rez.by/images/fot4_small.png" alt="сверление"></a></li>
+							<li><a href="http://rez.by/pages/galerea/"><img src="http://rez.by/images/fot5_small.png" alt="сверление"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="menu2">
+					<h2 class="zagolovok2">Алмазные технологии в строительстве</h2>
+					<p>Алмазные технологии в строительстве REZ.BY</p>
+					<p>Алмазное сверление бетона – это качественный способ получить отверстия идеальной формы и любого диаметра за короткий промежуток времени. При этом такие негативные факторы как пыль, шум и вибрация практически отсутствуют.</p>
+					<p>Резка проемов при помощи алмазного инструмента дает возможность не только получить на выходе идеальную поверхность, но и избежать возможных трещин. Таким способом можно обрабатывать практически любой материал.</p>
+					<p>Стоит добавить, что алмазные технологии широко используются при демонтаже железобетона и прочих строительных материалови конструкций.</p>
+					<p> Новые возможности, которые открывает алмаз.<br>
+					<img src="http://rez.by/images/foto2.jpg" alt="сверление" class="rightimg"></p>
+					<p>С появлением алмазных технологий сверления и резки строительство перешло на более качественный уровень. И дело не только в том, что благодаря алмазному инструменту отверстия и поверхности получаются идеально ровными и гладкими. На обработку материала таким способом затрачивается вполовину меньше времени, чем раньше.</p>
+					<p>Компания REZ.BY рада предложить вам свои услуги в области строительства и демонтажа.</p> 
+					<p>Подробнее об алмазном сверлении, алмазной резки, строительном демонтаже, и других услугах нашей компании вы можете узнать в соответствующих разделах сайта, а также связавшись с нами.</p>
+					</p>
+				</div>
+			<?  } else {  ?>{run 'current' 'current'}<?  }  ?>  
+			</div>
+			<div class="pld"></div>
+			<div class="page-buffer"></div>
+			<div class="slider">
+    <h2>Example - 5</h2>
+    <pre>$('#demo5').scrollbox(<? echo 
+; ?>);
+$('#demo5-backward').click(function () <? echo 
+; ?>);
+$('#demo5-forward').click(function () <? echo 
+; ?>);</pre>
+    <div id="demo5" class="scroll-img">
+      <ul>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=234" target="_blank"><img src="img/normal_234.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=485" target="_blank"><img src="img/normal_485.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=511" target="_blank"><img src="img/normal_511.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=725" target="_blank"><img src="img/normal_725.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=840" target="_blank"><img src="img/normal_840.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=934" target="_blank"><img src="img/normal_934.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=1295" target="_blank"><img src="img/normal_1295.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=1459" target="_blank"><img src="img/normal_1459.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=1590" target="_blank"><img src="img/normal_1590.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=1688" target="_blank"><img src="img/normal_1688.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=3206" target="_blank"><img src="img/normal_3206.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=3810" target="_blank"><img src="img/normal_3810.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=5176" target="_blank"><img src="img/normal_5176.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=6861" target="_blank"><img src="img/normal_6861.png"></a></li>
+        <li><a href="http://www.faceyourmanga.com/mangatar.php?id=7004" target="_blank"><img src="img/normal_7004.png"></a></li>
+      </ul>
+    </div>
+			</div>
+			
+			
+			<div class="niz">
+				<div class="footer">
+					<div class="kontakt11">
+						<p class="kontakt1">vel 8 029 366 04 10</p>
+						<p class="kontakt1">мтс 8 033 366 04 10</p>
+						<p class="kontakt1 email">happy.diamond@mail.ru</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<? if ( $compiler["php"] == '' ) { ?> 
+<script type="text/javascript">
+function theRotator(){ 
+	$('div#rotator ul li').css({ opacity: 0.0});
+	$('div#rotator ul li:first').css({ opacity: 1.0});
+	setInterval('rotate()', 3000);
+}
+function rotate(){ 
+	var current = ($('div#rotator ul li.show')?  $('div#rotator ul li.show') : $('div#rotator ul li:first'));
+	var next = ((current.next().length) ? ((current.next().hasClass('show')) ? $('div#rotator ul li:first') :current.next()) : $('div#rotator ul li:first'));	
+	next.css({ opacity: 0.0})
+	.addClass('show')
+	.animate({ opacity: 1.0}, 1000);
+	current.animate({ opacity: 0.0}, 1000)
+	.removeClass('show');
+};
+$(document).ready(function(){ 
+	theRotator();
+});
+</script>	
+<?  }  ?>
+</body>
+</html>

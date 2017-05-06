@@ -1,0 +1,137 @@
+﻿
+/*** ESSENTIAL STYLES ***/
+.ambitios_menu {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.ambitios_menu {
+	line-height:	1.0;
+}
+.ambitios_menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			222px; /* left offset of submenus need to match (see below) */
+}
+.ambitios_menu ul li {
+	width:			100%;
+}
+.ambitios_menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.ambitios_menu li {
+	float:			left;
+	position:		relative;
+	background:none !important;
+}
+.ambitios_menu a {
+	display:		block;
+	position:		relative;
+}
+.ambitios_menu li:hover ul,
+.ambitios_menu li.sfHover ul {
+	left:			0;
+	top:			1.8em; /* match top ul list item height */
+	z-index:		99;
+}
+ul.ambitios_menu li:hover li ul,
+ul.ambitios_menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.ambitios_menu li li:hover ul,
+ul.ambitios_menu li li.sfHover ul {
+	left:			222px; /* match ul width */
+	top:			-8px;
+	margin-left:5px;
+}
+ul.ambitios_menu li li:hover li ul,
+ul.ambitios_menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.ambitios_menu li li li:hover ul,
+ul.ambitios_menu li li li.sfHover ul {
+	left:			222px; /* match ul width */
+	top:			-8px;
+}
+
+
+
+
+/*** DEMO SKIN ***/
+.ambitios_menu {
+	float:			left;
+}
+.ambitios_menu ul {
+	float:			left;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background:#fafafa;
+	padding:8px 0
+}
+.ambitios_menu a {
+	text-decoration:none;
+	color:#333;
+}
+.ambitios_menu a:hover	  { /* visited pseudo selector so IE6 applies text colour*/
+	color:#19b6c5;
+}
+.ambitios_menu li {
+	float:left;
+	font-size:18px;
+	line-height:30px;
+}
+
+	.ambitios_menu li a {
+		
+	}
+.ambitios_menu li li {
+}
+	.ambitios_menu li li a {
+		font-weight:normal;
+		color:#474747;
+		padding:0 0 0 21px;
+		line-height:30px;
+		height:35px;
+		overflow:hidden;
+		margin-left:-5px;
+		background:none
+		
+	}
+	.ambitios_menu li li a:hover, .ambitios_menu li li a.current {
+		background:url(../images/drop_bg.png) no-repeat 0% 0%;
+		color:#474747;
+	}
+	.ambitios_menu li li:last-child a {
+		border-bottom:none;
+	}
+.ambitios_menu li li li {
+	
+}
+.ambitios_menu li:hover, .ambitios_menu li.sfHover,
+.ambitios_menu a:focus, .ambitios_menu a:hover, .ambitios_menu a:active {
+	outline:		0;
+}
+
+/*** arrows **/
+.ambitios_menu a.sf-with-ul {
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-sub-indicator {
+	position:		absolute;
+	display:		none !important;
+	right:			-12px;
+	top:			1.05em; /* IE6 only */
+	width:			10px;
+	height:			10px;
+	text-indent: 	-999em;
+	overflow:		hidden;
+	
+}
+a > .sf-sub-indicator {  /* give all except IE6 the correct values */
+	top:			.8em;
+}
+
+/* point right for anchors in subs */
+.ambitios_menu ul .sf-sub-indicator { right:10px !important; top:15px;}
+.ambitios_menu ul a > .sf-sub-indicator { }
