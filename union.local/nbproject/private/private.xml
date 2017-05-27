@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>templates/_encrypt.tpl</url>
+            <bookmark id="1">
+                <name/>
+                <line>12</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/net/open/OpenServer/domains/union.local/lib/config.php</file>
+            <file>file:/D:/net/open/OpenServer/domains/union.local/templates/_encrypt.tpl</file>
+            <file>file:/D:/net/open/OpenServer/domains/union.local/lib/cryptKey.class.php</file>
+        </group>
+    </open-files>
+</project-private>
