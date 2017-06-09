@@ -1,6 +1,5 @@
 <?php
-    header('Content-Type: text/html; charset=UTF-8');
-    
+
     interface Observable {
         public function attach (Observer $observer);
         public function detach (Observer $observer);
@@ -68,57 +67,22 @@
         function update (Observable $observable);
     }
     
-    /*abstract class LoginObserver implements Observer {
-        private $login;
-        
-        function __construct($login) {
-            $this->login = $login;
-            $login->attach( $this );
-        }
-        
-        function update(Observable $observable) {
-            if ($observable === $this->login) {
-                $this->doUpdate($observable);
-            }
-        }
-        abstract function doUpdate(Login $login);
-    }
-            
-    class SecurityMonitor extends LoginObserver {
-        function doUpdate (Login $login) {
-            $status = $login->getStatus();
-            echo "почту сис админу " . $status[0] . "<br />" ;                
-        }
-    }
-    class GeneralLogger extends LoginObserver {
-        function doUpdate (Login $login) {
-            $status = $login->getStatus();
-            echo "регистрация в журнале " . $status[0] . "<br />" ;               
-        }
-    }
-    class PartnerTool extends LoginObserver {
-        function doUpdate (Login $login) {
-            $status = $login->getStatus();
-            echo "хрень какая-то " . $status[0] . "<br />" ;                
-        }
-    }*/
-    
     class SecurityMonitor implements Observer {
         function update (Observable $observable) {
             $status = $observable->getStatus();
-            echo "почту сис админу " . $status[0] . "<br />" ;                
+            echo "Send email to admin " . $status[0] . "<br />" ;                
         }
     }
     class GeneralLogger implements Observer {
         function update (Observable $observable) {
             $status = $observable->getStatus();
-            echo "регистрация в журнале " . $status[0] . "<br />" ;                  
+            echo "Log in " . $status[0] . "<br />" ;                  
         }
     }
     class PartnerTool implements Observer {
         function update (Observable $observable) {
             $status = $observable->getStatus();
-            echo "хрень какая-то " . $status[0] . "<br />" ;                
+            echo "other option" . $status[0] . "<br />" ;                
         }
     }       
     
@@ -126,10 +90,7 @@
     $login->attach(new SecurityMonitor());
     $login->attach(new GeneralLogger());
     $login->attach(new PartnerTool());
-    //$secureMonitor = new SecurityMonitor($login);
-    //$generalLogger = new GeneralLogger($login);
-    //$partnerTool = new PartnerTool($login);
     $login->habdleLogin("user", "pass", "152.36.23.31");
     $login->habdleLogin("colac", "pass", "152.36.23.31");
     $login->habdleLogin("batton", "pass", "152.36.23.31");
-
+    $login->habdleLogin("kwar", "pass", "152.36.23.31");

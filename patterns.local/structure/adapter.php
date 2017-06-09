@@ -1,17 +1,12 @@
 <?php
-    header('Content-Type: text/html; charset=UTF-8');
 
     interface IDuck {
-
         public function sing();
-
         public function fly();
     }
 
     interface ITurkey {
-
-        public function gobble(); // тарахтеть
-
+        public function gobble(); 
         public function fly();
     }
 
@@ -69,7 +64,3 @@
     $duckTurkey->sing();
     $duckTurkey->fly();
     $duckTurkey->sing();
-
-
-
-

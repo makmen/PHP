@@ -1,12 +1,10 @@
 <?php
-    header('Content-Type: text/html; charset=UTF-8');
-
     class Singlton {
         private static $instance;
-        public $i = 0;
+        private $i = 0;
 
         private function __construct() {
-            echo "Singlton is created ". ++$i;
+            echo "Singlton is created";
         }
 
         public static function getInstance() {
@@ -16,9 +14,15 @@
 
             return self::$instance;
         }
+        
+        protected function __clone() {
+            
+        }
+        
     }
 
     $obj = Singlton::getInstance();
+    //$obj = clone $obj;
     $obj = Singlton::getInstance();
     $obj = Singlton::getInstance();
     $obj = Singlton::getInstance();
