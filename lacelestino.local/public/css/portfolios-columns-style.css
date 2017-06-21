@@ -1,0 +1,12 @@
+ul#portfolio.columns { list-style:none; margin:0; padding-top:20px; }
+#portfolio.columns li { margin-bottom:40px; position: relative;}
+#portfolio.columns li.hentry { padding:0 }
+#portfolio li.first { clear:both }
+#portfolio.columns li .thumb { display:block; overflow:hidden; position:relative; margin-bottom: 10px; border: 6px solid #eee }
+#portfolio.columns li .thumb:hover { border: 6px solid #F29A03 }
+
+.portfolio.columns h5 a{font-size:16px;}
+
+#portfolio.columns li p { margin-bottom:15px; font-size:1em }
+#portfolio.columns li p img { display:block }
+
