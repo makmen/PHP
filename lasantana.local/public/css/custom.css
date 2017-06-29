@@ -1,0 +1,67 @@
+
+/* box */
+div.alertbox {
+    border-radius: 6px 6px 6px 6px;
+    font-size: 108.3%;
+    margin: 2px 0 15px;
+    padding: 20px 15px 20px 65px;
+}
+/* success */
+div.success-box {
+    background: url("../images/message/check.png") no-repeat scroll 15px center #EBFAB6;
+    border: 1px solid #BBCC5B;
+    color: #599847;
+}
+/* arrow */
+div.arrow-box {
+    background: url("../images/message/arrow.png") no-repeat scroll 15px center #EBFAB6;
+    border: 1px solid #BBCC5B;
+    color: #599847;
+}
+/* alert */
+div.alert-box {
+    background: url("../images/message/alert.png") no-repeat scroll 15px center #FBDD96;
+    border: 1px solid #E5AF51;
+    color: #CA6B1C;
+}
+/* error */
+div.error-box {
+    background: url("../images/message/error.png") no-repeat scroll 15px center #FDD2D1;
+    border: 1px solid #F6988F;
+    color: #883333;
+}
+/* notice */
+div.notice-box {
+    background: url("../images/message/note.png") no-repeat scroll 15px center #F9EBCA;
+    border: 1px solid #E5B2AC;
+    color: #9F6722;
+}
+/* info */
+div.info-box {
+    background: url("../images/message/info.png") no-repeat scroll 15px center #E6EBF0;
+    border: 1px solid #89BECD;
+    color: #277DCE;
+}
+
+.error-left {
+    font-size:11px; text-align:left; color:#EB340A;
+}
+
+.wrap_result {
+    background-color: #f0f2f0;
+    border: 2px solid #BCA474;
+    border-radius: 10px;
+    font-size: 120%;
+    padding: 20px;
+    position: fixed;
+    right: 0%;
+    top:1%;
+    width:300px;
+    height: 60px;
+    text-align: center;
+    display: none;
+    z-index: 5005
+}
+.wrap_result p {
+    padding-top: 15px;
+}

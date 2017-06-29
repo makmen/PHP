@@ -1,0 +1,71 @@
+.mix_container{
+	width:960px;
+	height:430px;
+	position:relative;
+}
+.mix_nav {
+    background: url("../images/scroll_button.png") no-repeat scroll left top transparent;
+    height: 74px;
+    position: absolute;
+    right: -7px;
+    top:201px;
+    width: 28px;
+    z-index: 1;
+}
+.mix_nav span{
+	width:27px;
+	height:36px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	text-indent:-9000px;
+	opacity:0.7;
+	cursor:pointer;
+}
+.mix_nav span.mix_next{
+	top:auto;
+	bottom:0px;
+	left:0px;
+}
+.mix_nav span:hover{
+	opacity:1.0;
+}
+.mix_wrapper{
+	width:100%;
+	height:100%;
+	position:relative;
+	margin:0px auto;
+}
+.mix_wrapper ul li{
+	float:left;
+	margin-right:10px;
+	padding-bottom:10px;
+}
+.mix_wrapper ul li.last{margin-right:0px;}
+.mix_wrapper ul li a{
+	outline:none;
+	display:block;
+	color:#fff;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+}
+.mix_wrapper ul li a img{
+}
+.mix_wrapper ul li a img:hover{
+	opacity:1.0;
+}
+.mix_wrapper ul li a.product-image{
+     border: 2px solid #E2E2E2;
+    box-shadow: 0 0 5px #E5E5E5;
+	-moz-box-shadow: 0 0 5px #E5E5E5;
+	-webkit-box-shadow: 0 0 5px #E5E5E5;
+    color: #FFFFFF;
+    display: block;
+	min-height: 165px;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    outline: medium none;
+    padding: 5px;
+}
+.mix_wrapper button.button span{box-shadow:none;}
+/* Specific style for the examples */

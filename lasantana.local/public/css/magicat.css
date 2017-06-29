@@ -1,0 +1,64 @@
+/*left navigation container css start*/
+.magicat-container{
+	}
+ul#magicat a {
+    color: #957B47;
+    letter-spacing: 1px;
+    line-height: 12px;
+    text-decoration: none;
+}
+ul#magicat li{
+	padding:5px 0px;
+	width:100%;
+	}
+ul#magicat li a {
+    background: url("../images/menu-arrow-open.png") no-repeat scroll 0 0 transparent;
+    color: #404040;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0 0 8px 13px;
+}
+ul#magicat li ul{
+	float:left;
+	padding-bottom:8px;
+	width:100%;
+	}
+ul#magicat li ul li{
+	float:left;
+	padding:5px 0 0px 20px;
+	}
+ul#magicat li ul li a{
+	background: none repeat scroll 0 50% transparent;
+    border-bottom: 1px solid #F5F5F5;
+    color: #AAAAAA !important;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    padding:0px 0px 2px 0px;
+    width: 92%;
+	}
+ul#magicat li ul li ul li{
+	float:left;
+	padding:0px;
+	}
+ul#magicat li ul li ul li a{
+	border-bottom: 0 none;
+    color: #222222 !important;
+    font-size: 10px;
+    font-weight: normal !important;
+    line-height: 15px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    width: auto;
+	}
+.block .block-content{
+	background:none !important;
+	color:#404040;
+	font-size:12px;
+	}
+ul#magicat li span.magicat-cat a span:hover, ul#magicat li.active span.magicat-cat a span{
+	color:#BCA474;
+	}
+
+/*left navigation container css close*/
