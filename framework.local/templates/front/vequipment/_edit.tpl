@@ -1,1 +1,0 @@
-{include 'power/_add.tpl'}

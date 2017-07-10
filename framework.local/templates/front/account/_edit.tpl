@@ -1,1 +1,0 @@
-{include 'account/_register.tpl'}
