@@ -19,7 +19,7 @@
         ?>
     <div class="mess-top">
         <div class="fbok">
-            <div class="info">Новостей нет</div>
+            <div class="info">Нет данных</div>
         </div>
     </div>
     <?php } ?>
