@@ -9,7 +9,7 @@ class Request {
     private $data;
     
     public function __construct() {
-        $this->data = $this->xss($_REQUEST);
+        $_REQUEST = $this->xss($_REQUEST);
     }
     
     public function __get($name) {
