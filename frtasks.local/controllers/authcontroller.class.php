@@ -14,7 +14,7 @@ class AuthController extends Controller {
         if ( Request::$requestMethodPost ) {
             $result = false;
             if ( isset($_REQUEST["auth_login"]) && isset($_REQUEST["auth_password"])) {
-                $result = User::check($_REQUEST["auth_login"], $_REQUEST["auth_password"] );
+                $result = User::check($this->request->auth_login, $this->request->auth_password );
             }
             if ($result) {
                 $this->redirect( Config::SERVER_NAME );
@@ -46,7 +46,7 @@ class AuthController extends Controller {
         $this->out['roles'] = Role::getAllRoles();
         
         if ( Request::$requestMethodPost ) {
-            $this->out['user']->loadModel($_REQUEST);
+            $this->out['user']->loadModel( $this->request->getData() );
             $this->out['user']->role_id = ($this->out['canWordWithUsers']) ? 
                 ( (isset($_REQUEST['role'])) ? (int)$_REQUEST['role'] : Role::$roleDefault )
                 : Role::$roleDefault;
@@ -55,7 +55,6 @@ class AuthController extends Controller {
                 $this->out['user']->validateDenied = array("captcha");
             }
 
-            $this->out['user']->loadModel($_REQUEST);
             $result = $this->out['user']->save();
             if ($result) {
                 if ($this->out['canWordWithUsers']) {
@@ -126,7 +125,7 @@ class AuthController extends Controller {
                     $this->out['user']->fieldsDenied, array ("password", "repassword")
                 );
             }
-            $this->out['user']->loadModel($_REQUEST, $this->out['user']->getId());
+            $this->out['user']->loadModel($this->request->getData(), $this->out['user']->getId());
             if ($this->out['canWordWithUsers']) {
                 $this->out['user']->role_id = ( (isset($_REQUEST['role'])) ? (int)$_REQUEST['role'] : Role::$roleDefault );
             }
@@ -190,7 +189,7 @@ class AuthController extends Controller {
         $this->breadcrumb->addData($this->out['titlePage'], URL::$currentUrl);
 
         if ( Request::$requestMethodPost ) {
-            $this->out['forget'] = new forgetForm($_REQUEST);
+            $this->out['forget'] = new forgetForm( $this->request->getData() );
             $this->out['forget']->validate();
             if ( count($this->out['forget']->errors) == 0) {
                 // send a message

@@ -31,7 +31,7 @@ class PermissionController extends Controller {
             }
             
             $success = true;
-            $data = $_REQUEST;
+            $data = $this->request->getData();
             
             foreach ($this->out['roles'] as $role) {
                 if (isset($data[$role['id']])) {

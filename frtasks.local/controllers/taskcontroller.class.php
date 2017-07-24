@@ -27,7 +27,8 @@ class TaskController extends Controller {
 
 
         if ( Request::$requestMethodPost ) {
-            $this->out['task']->loadModel($_REQUEST);
+            $this->out['task']->loadModel( $this->request->getData() );
+            $this->out['task']->content = $_REQUEST['content'];
             $result = $this->out['task']->save();
             if ($result) {
                 if ( ($this->out['task']->executor > 0) && 
@@ -40,6 +41,63 @@ class TaskController extends Controller {
                 }
                 $_SESSION["ok"] = 'Задача добавлена';
                 $this->redirect( URL::buildUrl( URL::$controller, 'one', $this->out['task']->getID() ) );
+            } else {
+                $this->out['errors'] = $this->message->getErrors( $this->out['task']->getErrors() );
+                $this->out['allErrors'] = $this->view->render("errors/validator", $this->out, true);
+            }
+        }
+
+        $this->render("task/add");
+    }
+    
+
+    public function actionEdit() {
+        $this->title = "Редактирование задачи";
+        $this->out['titlePage'] = "Редактирование задачи";
+        $this->breadcrumb->setDefault(URL::buildUrl(URL::$controller, 'view'));
+        $this->breadcrumb->addData($this->out['titlePage'], URL::$currentUrl);
+        
+        $this->out['trecker'] = Task::$trecker; 
+        $this->out['priority'] = Task::$priority; 
+        $this->out['users'] = User::getAllUser();
+        
+        $id = (int)URL::$id;
+        $this->out['task'] = new Task();
+        if (!$this->out['task']->load( $id )) {
+            $this->accessDenied();
+            throw new Exception("ACCESS_DENIED");
+        }
+
+        if ( User::accessDenied( 'EDIT_TASK' ) || $this->auth_user['id'] != $this->out['task']->user_id ) {
+            $this->accessDenied();
+            throw new Exception("ACCESS_DENIED");
+        }
+        
+        if ($this->out['task']->status != 'New') {
+            $this->accessDenied('Редактирование запрещено. Задача уже была обновлена. ');
+            throw new Exception("ACCESS_DENIED");
+        }
+
+        if ( Request::$requestMethodPost ) {
+            $this->out['task']->fieldsDenied = History::$editedInHistory; // denied specific fields 
+            $this->out['task']->loadModel( $this->request->getData(), $this->out['task']->getId());
+            $this->out['task']->content = $_REQUEST['content'];
+            Task::setEnumParam($this->out['task']);
+ 
+            $result = $this->out['task']->save();
+            if ($result) {
+                
+                if ( ($this->out['task']->executor > 0) && 
+                        $this->out['task']->executor != $this->out['task']->user_id ) {
+                    $this->out['executor'] = User::getUser($this->out['task']->executor);
+                    $this->out['owner'] = $this->auth_user;
+                    $this->mail->send(
+                        $this->out['executor']['email'], $this->out , "newtask"
+                    );
+                }
+                
+                $_SESSION["ok"] = 'Задача обновлена';
+                $this->redirect( URL::buildUrl( URL::$controller, 'one', URL::$id) );
             } else {
                 $this->out['errors'] = $this->message->getErrors( $this->out['task']->getErrors() );
                 $this->out['allErrors'] = $this->view->render("errors/validator", $this->out, true);
@@ -135,61 +193,6 @@ class TaskController extends Controller {
 
         $this->render("task/one");
     }
-
-    public function actionEdit() {
-        $this->title = "Редактирование задачи";
-        $this->out['titlePage'] = "Редактирование задачи";
-        $this->breadcrumb->setDefault(URL::buildUrl(URL::$controller, 'view'));
-        $this->breadcrumb->addData($this->out['titlePage'], URL::$currentUrl);
-        
-        $this->out['trecker'] = Task::$trecker; 
-        $this->out['priority'] = Task::$priority; 
-        $this->out['users'] = User::getAllUser();
-        
-        $id = (int)URL::$id;
-        $this->out['task'] = new Task();
-        if (!$this->out['task']->load( $id )) {
-            $this->accessDenied();
-            throw new Exception("ACCESS_DENIED");
-        }
-
-        if ( User::accessDenied( 'EDIT_TASK' ) || $this->auth_user['id'] != $this->out['task']->user_id ) {
-            $this->accessDenied();
-            throw new Exception("ACCESS_DENIED");
-        }
-        
-        if ($this->out['task']->status != 'New') {
-            $this->accessDenied('Редактирование запрещено. Задача уже была обновлена. ');
-            throw new Exception("ACCESS_DENIED");
-        }
-
-        if ( Request::$requestMethodPost ) {
-            $this->out['task']->fieldsDenied = History::$editedInHistory; // denied specific fields 
-            $this->out['task']->loadModel($_REQUEST, $this->out['task']->getId());
-            Task::setEnumParam($this->out['task']);
- 
-            $result = $this->out['task']->save();
-            if ($result) {
-                
-                if ( ($this->out['task']->executor > 0) && 
-                        $this->out['task']->executor != $this->out['task']->user_id ) {
-                    $this->out['executor'] = User::getUser($this->out['task']->executor);
-                    $this->out['owner'] = $this->auth_user;
-                    $this->mail->send(
-                        $this->out['executor']['email'], $this->out , "newtask"
-                    );
-                }
-                
-                $_SESSION["ok"] = 'Задача обновлена';
-                $this->redirect( URL::buildUrl( URL::$controller, 'one', URL::$id) );
-            } else {
-                $this->out['errors'] = $this->message->getErrors( $this->out['task']->getErrors() );
-                $this->out['allErrors'] = $this->view->render("errors/validator", $this->out, true);
-            }
-        }
-
-        $this->render("task/add");
-    }
     
     public function actionUpdate() { 
         $this->title = "Обновление задачи";
@@ -249,7 +252,9 @@ class TaskController extends Controller {
                     }
                 }
                 
-                $this->out['task']->loadModel( $_REQUEST, $this->out['task']->id );
+                $this->out['task']->loadModel( $this->request->getData(), $this->out['task']->id );
+                $this->out['task']->comment = $_REQUEST['comment'];
+                
                 Task::setEnumParam($this->out['task']);
                 $this->out['task']->task_id_updated = $this->auth_user['id']; 
                 $this->out['task']->timeBehavior = false; // deny update timeBehavior

@@ -36,7 +36,7 @@
             <div class="cb"></div>
             <!--end main-->
             <div id="footer">
-                <p class="copyright">Copyright &copy; <a href="#">Domain Name</a> - All Rights Reserved / Design By <a href="#">Andrew Makas</a></p>
+                <p class="copyright">Copyright &copy; <a href="#">Domain Name</a> - All Rights Reserved / Design By <a target="_blank" href="http://www.chris-creed.com/">Chris Creed</a></p>
             </div>
             <!--end footer-->
         </div>

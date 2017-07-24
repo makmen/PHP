@@ -57,7 +57,7 @@ class ProjectController extends Controller {
         $this->breadcrumb->addData($this->out['titlePage'], URL::$currentUrl);        
         if ( Request::$requestMethodPost ) {
             $this->out['project'] = new Project();
-            $this->out['project']->loadModel($_REQUEST);
+            $this->out['project']->loadModel( $this->request->getData() );
             
             $result = $this->out['project']->save();
             if ($result) {
@@ -95,7 +95,7 @@ class ProjectController extends Controller {
         $this->out['project']->loadModel($project, $id);
 
         if ( Request::$requestMethodPost ) {
-            $this->out['project']->loadModel($_REQUEST, $this->out['project']->getId());
+            $this->out['project']->loadModel( $this->request->getData(), $this->out['project']->getId());
             $result = $this->out['project']->save();
             if ($result) {
                 $this->out['ok'] = 'Данные обновлены';

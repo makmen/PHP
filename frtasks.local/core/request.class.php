@@ -6,10 +6,15 @@ class Request {
     public static $user_agent;
     public static $isAjax = false;
     public static $requestMethodPost = false;
+    
     private $data;
     
+    function getData() {
+        return $this->data;
+    }
+        
     public function __construct() {
-        $this->data = $this->xss($_REQUEST);
+        $this->data = $this->safe($_REQUEST);
     }
     
     public function __get($name) {
@@ -37,15 +42,17 @@ class Request {
         URL::parse();
     }
 
-    private function xss($data) {
+    private function safe($data) {
         if (is_array($data)) {
             $escaped = array();
             foreach ($data as $key => $value) {
-                $escaped[$key] = $this->xss($value);
+                $escaped[$key] = $this->safe($value);
             }
+            
             return $escaped;
         }
-        return trim(htmlspecialchars($data));
+        
+        return trim( htmlspecialchars($data) );
     }
 
 }
